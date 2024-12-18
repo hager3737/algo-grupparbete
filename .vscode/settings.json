@@ -1,9 +1,0 @@
-{
-    "makefile.launchConfigurations": [
-        {
-            "cwd": "c:\\Users\\vikto\\source\\cplusplus\\algo-grupparbete",
-            "binaryPath": "c:\\Users\\vikto\\source\\cplusplus\\algo-grupparbete\\main.exe",
-            "binaryArgs": []
-        }
-    ]
-}
