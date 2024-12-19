@@ -10,6 +10,7 @@ class DistributedVectorAccountStorage : public IAccountStorage {
 public:
     void addAccount(BankAccount account) override;
     BankAccount* findAccount(std::string accountNumber) override;
+    std::vector<BankAccount> getAllAccounts() override; // Implemented method
 };
 
 #endif // DISTRIBUTED_VECTOR_ACCOUNT_STORAGE_H

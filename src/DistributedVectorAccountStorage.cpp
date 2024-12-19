@@ -14,3 +14,11 @@ BankAccount* DistributedVectorAccountStorage::findAccount(std::string accountNum
     }
     return nullptr;
 }
+
+std::vector<BankAccount> DistributedVectorAccountStorage::getAllAccounts() {
+    std::vector<BankAccount> allAccounts;
+    for (auto& group : accounts) {
+        allAccounts.insert(allAccounts.end(), group.begin(), group.end());
+    }
+    return allAccounts;
+}
