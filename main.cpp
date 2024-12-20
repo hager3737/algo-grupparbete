@@ -1,6 +1,7 @@
 #include "include/Bank.h"
 #include "include/MapStorage.h"
 #include "include/DistributedVectorAccountStorage.h"
+#include "include/UtilityFunctions.h"
 #include <iostream>
 #include <chrono>
 
@@ -18,11 +19,8 @@ int main() {
     auto startTime = std::chrono::high_resolution_clock::now();
     for (int i = 0; i <= AntalAccounts; i++) {
         std::string accountNumber = std::to_string(i);
-        // while(accountNumber.length() < 4) {
-        //     accountNumber.insert(0, "0");
-        // }
-        // if (i == 0 ) sFirst = accountNumber;
-        // if (i == AntalAccounts) sLast = accountNumber;
+         if(i == 0) sFirst = padString(accountNumber);
+         if (i == AntalAccounts) sLast = padString(accountNumber);
         bank.addAccount(accountNumber);
     }
 
@@ -34,13 +32,13 @@ int main() {
 
     // First account
     startTime = std::chrono::high_resolution_clock::now();
-    BankAccount* p = bank.getAccount("0000");
+    BankAccount* p = bank.getAccount(sFirst);
     endTime = std::chrono::high_resolution_clock::now();
     std::cout << p->getAccountNumber() << " took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
 
     // Last account
     startTime = std::chrono::high_resolution_clock::now();
-    p = bank.getAccount("1000");
+    p = bank.getAccount(sLast);
     endTime = std::chrono::high_resolution_clock::now();
     std::cout << p->getAccountNumber() << " took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
 

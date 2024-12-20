@@ -19,6 +19,6 @@ std::string BankAccount::getAccountNumber() {
 
 // std::string BankAccount::padAccountNumber(const std::string& accountNumber) {        Om vi vill använda <iomanip>
 //     std::ostringstream padded;
-//     padded << std::setw(4) << std::setfill('0') << accountNumber; // Ensures padding to 10 digits
+//     padded << std::setw(4) << std::setfill('0') << accountNumber; 
 //     return padded.str();
 // }
