@@ -2,15 +2,17 @@
 #include "include/MapStorage.h"
 #include "include/DistributedVectorAccountStorage.h"
 #include "include/UtilityFunctions.h"
+#include "include/BinarySearchStorage.h"
 #include <iostream>
 #include <chrono>
 
 int main() {
-    DistributedVectorAccountStorage storage;
+    //DistributedVectorAccountStorage storage;
     //MapStorage storage;
+    BinarySearchStorage storage;
     Bank bank(&storage);
 
-    const int AntalAccounts = 1000;
+    const int AntalAccounts = 1000000;
 
     std::string sFirst = "";
     std::string sLast = "";
@@ -25,7 +27,7 @@ int main() {
     }
 
     std::cout << "All Accounts:" << std::endl;
-    bank.displayAllAccounts();
+    //bank.displayAllAccounts();
 
     auto endTime = std::chrono::high_resolution_clock::now();
     std::cout << "Init took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";

@@ -1,10 +1,10 @@
 #include "../include/BankAccount.h"
 
-BankAccount::BankAccount() : accountNumber("0000"), balance(0) {}
+BankAccount::BankAccount() : accountNumber("0000000"), balance(0) {}
 
 BankAccount::BankAccount(std::string accountNumber, float balance)
     : balance(balance) {
-        while (accountNumber.length() < 4) {
+        while (accountNumber.length() < 7) {
         accountNumber.insert(0, "0");
     }
     this->accountNumber = accountNumber;
