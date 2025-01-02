@@ -1,12 +1,12 @@
 #include <iostream>
 
-// En mallklass för en kö som kan lagra upp till en viss mängd data
+// En klass för en kö som kan hålla upp till en viss mängd data
 template <typename T, size_t Size>
 class Queue {
 private:
-    T data[Size];       // Här lagras alla element i kön
-    size_t front = 0;   // Plats där nästa element tas bort
-    size_t rear = 0;    // Plats där nästa element läggs till
+    T data[Size];       // Här sparas alla element i kön
+    size_t front = 0;   // var nästa element ska tas bort
+    size_t rear = 0;    // var nästa element ska läggas till
     size_t count = 0;   // Håller koll på hur många element som finns i kön
 
 public:
