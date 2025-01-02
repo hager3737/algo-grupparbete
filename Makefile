@@ -1,5 +1,5 @@
 PROG = main.exe 
-SRC = main.cpp src/Bank.cpp src/BankAccount.cpp src/DistributedVectorAccountStorage.cpp src/MapStorage.cpp src/VectorAccountStorage.cpp src/UtilityFunctions.cpp src/BinarySearchStorage.cpp
+SRC = main.cpp src/Bank.cpp src/BankAccount.cpp src/UtilityFunctions.cpp src/BinarySearchStorage.cpp
 CFLAGS = -g -std=c++17
 LIBS = 
 CC=g++

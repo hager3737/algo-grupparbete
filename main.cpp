@@ -1,14 +1,10 @@
 #include "include/Bank.h"
-#include "include/MapStorage.h"
-#include "include/DistributedVectorAccountStorage.h"
 #include "include/UtilityFunctions.h"
 #include "include/BinarySearchStorage.h"
 #include <iostream>
 #include <chrono>
 
 int main() {
-    //DistributedVectorAccountStorage storage;
-    //MapStorage storage;
     BinarySearchStorage storage;
     Bank bank(&storage);
 

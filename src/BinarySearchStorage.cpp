@@ -9,18 +9,18 @@ BankAccount* BinarySearchStorage::findAccount(std::string accountNumber) {
     int end = accounts.size() - 1;
 
     while (start <= end) {
-        int current = (start + end) / 2; // Middle index
+        int current = (start + end) / 2; 
 
         if (accounts[current].getAccountNumber() == accountNumber) {
-            return &accounts[current]; // Return the found account
+            return &accounts[current]; 
         } else if (accountNumber > accounts[current].getAccountNumber()) {
-            start = current + 1; // Move to the right half
+            start = current + 1; 
         } else {
-            end = current - 1; // Move to the left half
+            end = current - 1; 
         }
     }
 
-    return nullptr; // Return nullptr if not found
+    return nullptr; 
 }
 
 std::vector<BankAccount> BinarySearchStorage::getAllAccounts() {
