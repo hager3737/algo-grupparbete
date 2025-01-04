@@ -177,6 +177,57 @@ public:
 };
 
 
+// Del 3 (Tarek): "RingQueue"
+#include <iostream>
+#include <string>
+#include <array> // Standard library container for fixed-size arrays
+
+// A template class for a ring buffer (or circular queue) implementation
+// T is the data type of the elements (e.g., int, string), and N is the fixed capacity.
+template <typename T, std::size_t N>
+class RingQueue {
+public:
+    // Constructor: Initializes the ring buffer with head, tail, and full status
+    RingQueue() : head(0), tail(0), full(false) {}
+
+    // Adds a new element to the queue
+    // If the queue is full, the oldest element will be overwritten.
+    void enqueue(const T& value) {
+        data[tail] = value;              // Add the new value at the tail position
+        tail = (tail + 1) % N;           // Move the tail forward (wrap around using modulo)
+        if (full) {
+            head = (head + 1) % N;       // If the queue is full, move the head forward to overwrite
+        }
+        full = (tail == head);           // The queue is full if tail catches up to head
+    }
+
+    // Retrieves the value at a specific index relative to the head
+    // Returns false if the index is invalid or the queue is empty.
+    bool peek(std::size_t index, T& value) const {
+        if (isEmpty() || index >= size()) return false; // Validate input
+        value = data[(head + index) % N];               // Calculate the actual index in the buffer
+        return true;
+    }
+
+    // Returns the current number of elements in the queue
+    std::size_t size() const {
+        if (full) return N;             // If the queue is full, size equals the total capacity
+        if (tail >= head) return tail - head; // If no wrap-around, subtract head from tail
+        return N - head + tail;         // If wrap-around occurred, calculate accordingly
+    }
+
+    // Checks if the queue is empty
+    bool isEmpty() const {
+        return !full && (head == tail); // Empty if not full and head equals tail
+    }
+
+private:
+    std::array<T, N> data; // Fixed-size array to store elements
+    std::size_t head;      // Index of the oldest element (start of the queue)
+    std::size_t tail;      // Index where the next element will be inserted
+    bool full;             // Indicates whether the queue is full
+};
+
 
 int main(int, char**){
     //VectorAccountStorage storage;
@@ -223,4 +274,86 @@ int main(int, char**){
     p = bank.getAccount(sNotFound);
     endTime = std::chrono::high_resolution_clock::now();
     std::cout << "NOT FOUND" << " took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime    - startTime).count() << " milliseconds" << std::endl;
+
+    // Del 3: Ring Buffer (cirkulär kö):
+    RingQueue<std::string, 10> queue;
+
+    // Step 1: Enqueue elements and demonstrate overwriting
+    std::cout << "\nDel 3: Ring Buffer (cirkulär kö) demonstration" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    
+    std::cout << "Step 1: Enqueue elements and demonstrate overwriting" << std::endl;
+    // Enqueue initial elements
+    queue.enqueue("Anna");
+    queue.enqueue("Bertil");
+    queue.enqueue("Calle");
+    queue.enqueue("David");
+    queue.enqueue("Erik");
+    queue.enqueue("Fredrik");
+    queue.enqueue("Göran");
+    queue.enqueue("Henrietta");
+    queue.enqueue("Ivar");
+    queue.enqueue("Jan");
+
+    // Display initial elements
+    std::cout << "- Queue list with initial elements (size " << queue.size() << "):" << std::endl;
+    for (std::size_t i = 0; i < queue.size(); ++i) {
+        std::string value;
+        if (queue.peek(i, value)) {
+            std::cout << i << ": " << value << std::endl;
+        }
+    }
+
+
+    // Enqueue "Kenneth", which will overwrite "Anna"
+    queue.enqueue("Kenneth");
+
+    // Display updated queue elements
+    std::cout << "\n- Queue list after enqueuing a new element (size " << queue.size() << "):" << std::endl;
+    for (std::size_t i = 0; i < queue.size(); ++i) {
+        std::string value;
+        if (queue.peek(i, value)) {
+            std::cout << i << ": " << value << std::endl;
+        }
+    }
+    std::cout << std::endl;
+
+    // Step 2: Search for "Henrietta" using a binary search-like method
+    std::cout << "Step 2: Binary search\n";
+    std::string search = "Henrietta";
+    std::size_t start = 0;
+    std::size_t end = queue.size() - 1;
+    std::string current;
+    bool found = false;
+
+    std::cout << "Searching for \"" << search << "\"...\n" << std::endl;
+    while (start <= end) {
+        std::size_t currentIndex = (start + end) / 2;
+
+        // Wrap-around and modular arithmetic handled by the peek method
+        if (!queue.peek(currentIndex, current)) {
+            std::cout << "Error accessing index " << currentIndex << std::endl;
+            break;
+        }
+
+        std::cout << "Checking index " << currentIndex << ": " << current << std::endl;
+
+        if (current == search) {
+            found = true;
+            break;
+        }
+        if (current < search) {
+            start = currentIndex + 1;
+        } else {
+            end = currentIndex - 1;
+        }
+    }
+
+    if (found) {
+        std::cout << "\nFound: " << search << std::endl;
+    } else {
+        std::cout << "Not Found: " << search << std::endl;
+    }
+
+    return 0;
 }
