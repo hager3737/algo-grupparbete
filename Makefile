@@ -1,5 +1,5 @@
 PROG = main.exe 
-SRC = main.cpp Del3.cpp
+SRC = main.cpp src/Del3.cpp
 CFLAGS = -g -std=c++17
 LIBS = 
 CC=g++

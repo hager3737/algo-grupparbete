@@ -1,4 +1,4 @@
-#include "RingQueue.h"
+#include "../include/RingQueue.h"
 #include <string>
 #include <iostream> // För in-/utmatningsoperationer
 
