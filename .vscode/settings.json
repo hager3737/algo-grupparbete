@@ -68,6 +68,11 @@
       "cwd": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete",
       "binaryPath": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete\\main.exe",
       "binaryArgs": []
+    },
+    {
+      "cwd": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete\\algo-grupparbete",
+      "binaryPath": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete\\algo-grupparbete\\main.exe",
+      "binaryArgs": []
     }
   ],
   "files.associations": {
