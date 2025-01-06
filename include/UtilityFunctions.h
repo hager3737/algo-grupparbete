@@ -2,8 +2,9 @@
 #define UTILITY_FUNCTIONS_H
 
 #include <iostream>
-#include <iomanip>
+#include <string>
+#include "Bank.h"
 
-std::string padString(const std::string& accountNumber);
+void addBankAccounts(Bank &bank, int AMOUNT_OF_ACCOUNTS);
 
 #endif // UTILITY_FUNCTIONS_H

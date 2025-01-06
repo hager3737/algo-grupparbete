@@ -12,6 +12,9 @@ public:
     bool addAccount(std::string accountNumber);
     BankAccount* getAccount(std::string accountNumber);
     void displayAllAccounts();
+    void sortAllAccounts();
+    void displayFiveFirstAccounts();
+    void shuffleAllAccounts();
 };
 
 #endif // BANK_H

@@ -3,46 +3,37 @@
 #include "include/BinarySearchStorage.h"
 #include <iostream>
 #include <chrono>
+#include "include/Constants.h"
 
 int main() {
     BinarySearchStorage storage;
     Bank bank(&storage);
 
-    const int AntalAccounts = 1000000;
-
-    std::string sFirst = "";
-    std::string sLast = "";
-    std::string sNotFound = "notfound";
+    std::cout << "Time for generating random accounts starting..." << std::endl;
 
     auto startTime = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i <= AntalAccounts; i++) {
-        std::string accountNumber = std::to_string(i);
-         if(i == 0) sFirst = padString(accountNumber);
-         if (i == AntalAccounts) sLast = padString(accountNumber);
-        bank.addAccount(accountNumber);
-    }
 
-    std::cout << "All Accounts:" << std::endl;
-    //bank.displayAllAccounts();
+    addBankAccounts(bank, AMOUNT_OF_ACCOUNTS);
 
     auto endTime = std::chrono::high_resolution_clock::now();
-    std::cout << "Init took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
+    std::cout << "Time for generating random accounts completed. It took " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms" << std::endl;
 
-    // First account
-    startTime = std::chrono::high_resolution_clock::now();
-    BankAccount* p = bank.getAccount(sFirst);
-    endTime = std::chrono::high_resolution_clock::now();
-    std::cout << p->getAccountNumber() << " took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
+    std::cout << "Five first accounts unsorted:" << std::endl;
+    
+    bank.shuffleAllAccounts();
+    bank.displayFiveFirstAccounts();
 
-    // Last account
+    std::cout << "Time for sorting random accounts starting..." << std::endl;
     startTime = std::chrono::high_resolution_clock::now();
-    p = bank.getAccount(sLast);
-    endTime = std::chrono::high_resolution_clock::now();
-    std::cout << p->getAccountNumber() << " took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
 
-    // Not found
-    startTime = std::chrono::high_resolution_clock::now();
-    p = bank.getAccount(sNotFound);
+    // sorting
+    bank.sortAllAccounts();
+
     endTime = std::chrono::high_resolution_clock::now();
-    std::cout << "Not found took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
+    std::cout << "Sorting took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
+
+    std::cout << "Five first accounts sorted:" << std::endl;
+
+    bank.displayFiveFirstAccounts();
+
 }
