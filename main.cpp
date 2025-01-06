@@ -1,4 +1,6 @@
 // Del 3 Makro (Tarek) : implementeringen av Ring Queue
+// #define Part_1
+// #define Part_2
 #define Part_3
 
 // Del 3 (Tarek): includes
@@ -6,8 +8,9 @@
 #include "include/Del3.h" // Inkludera header-filen för Part 3
 
 
-int main(int, char**){
-    // Del 1 (Johann & Viktor);
+int main(){
+    // Del 1 (Johann & Viktor)
+    
     
     // Del 2 (Axel): ...
     
