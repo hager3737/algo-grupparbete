@@ -4,12 +4,13 @@
 #include <iostream>
 #include <chrono>
 #include "include/Constants.h"
+#include "../include/RunPart1.h"
 
-int main() {
+void runPart1() {
     BinarySearchStorage storage;
     Bank bank(&storage);
 
-    std::cout << "Time for generating random accounts starting..." << std::endl;
+    std::cout << "Time for generating random accounts starting" << std::endl;
 
     auto startTime = std::chrono::high_resolution_clock::now();
 
@@ -23,7 +24,7 @@ int main() {
     bank.shuffleAllAccounts();
     bank.displayFiveFirstAccounts();
 
-    std::cout << "Time for sorting random accounts starting..." << std::endl;
+    std::cout << "Time for sorting random accounts starting" << std::endl;
     startTime = std::chrono::high_resolution_clock::now();
 
     // sorting

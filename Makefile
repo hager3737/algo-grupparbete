@@ -1,15 +1,13 @@
 PROG = main.exe 
-SRC = main.cpp src/Bank.cpp src/BankAccount.cpp src/UtilityFunctions.cpp src/BinarySearchStorage.cpp
+SRC = main.cpp Del1/src/Bank.cpp Del1/src/BankAccount.cpp Del1/src/UtilityFunctions.cpp Del1/src/BinarySearchStorage.cpp Del1/src/RunPart1 Del2/src/Del2.cpp
 CFLAGS = -g -std=c++17
 LIBS = 
-CC=g++
-
+CC = g++
 all: $(PROG)
-
-$(PROG): $(SRC)
-	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(SRC)  $(LIBS) 
-
+$(PROG): $(OBJ)
+	$(CC) -o $@ $(OBJ) $(LIBS)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(PROG)
-
+	rm -f $(OBJ) $(PROG)
 .PHONY: all clean
