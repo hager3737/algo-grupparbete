@@ -56,22 +56,10 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "makefile.makefilePath": ".\\Makefile",
-  "makefile.makePath": "C:\\msys64\\mingw64\\bin\\mingw32-make",
   "makefile.launchConfigurations": [
     {
-      "cwd": "c:\\Users\\rek_t\\Desktop\\Nackademin\\Data structures & Algorithms\\Inlamningar\\Grupp\\algo-grupparbete",
-      "binaryPath": "c:\\Users\\rek_t\\Desktop\\Nackademin\\Data structures & Algorithms\\Inlamningar\\Grupp\\algo-grupparbete\\main.exe",
-      "binaryArgs": []
-    },
-    {
-      "cwd": "c:\\Users\\rek_t\\Desktop\\Nackademin\\Data structures & Algorithms\\Inlamningar\\Grupp\\algo-grupparbete\\algo-grupparbete",
-      "binaryPath": "c:\\Users\\rek_t\\Desktop\\Nackademin\\Data structures & Algorithms\\Inlamningar\\Grupp\\algo-grupparbete\\algo-grupparbete\\main.exe",
-      "binaryArgs": []
-    },
-    {
-      "cwd": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete\\algo-grupparbete",
-      "binaryPath": "c:\\OneDriveTemp\\OneDrive\\Desktop\\algo-grupparbete\\algo-grupparbete\\main.exe",
+      "cwd": "c:\\Users\\johan\\OneDrive\\Dokument\\Nackademin\\datastrukturer-algoritmer\\grupparbete\\algo-grupparbete",
+      "binaryPath": "c:\\Users\\johan\\OneDrive\\Dokument\\Nackademin\\datastrukturer-algoritmer\\grupparbete\\algo-grupparbete\\main.exe",
       "binaryArgs": []
     }
   ],
@@ -130,6 +118,45 @@
     "streambuf": "cpp",
     "text_encoding": "cpp",
     "typeinfo": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "any": "cpp",
+    "barrier": "cpp",
+    "bitset": "cpp",
+    "cfenv": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "complex": "cpp",
+    "condition_variable": "cpp",
+    "coroutine": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cstdarg": "cpp",
+    "cstring": "cpp",
+    "cuchar": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "expected": "cpp",
+    "regex": "cpp",
+    "source_location": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "generator": "cpp",
+    "latch": "cpp",
+    "mutex": "cpp",
+    "print": "cpp",
+    "ranges": "cpp",
+    "scoped_allocator": "cpp",
+    "semaphore": "cpp",
+    "shared_mutex": "cpp",
+    "spanstream": "cpp",
+    "stacktrace": "cpp",
+    "stdfloat": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "valarray": "cpp"
   }
 }
