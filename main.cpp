@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <random>
-#include <chrono>
+// #include <iostream>
+// #include <vector>
+// #include <map>
+// #include <random>
+// #include <chrono>
 
 // class BankAccount{
 //     std::string accountNumber;
@@ -234,6 +234,9 @@
 //#include <iostream>
 //#include "include/Del3.h" // Inkludera header-filen för Part 3
 
+#define Part_2
+
+#include "include/Del2.h"
 
 int main(){
     // Del 1 (Johann & Viktor)
