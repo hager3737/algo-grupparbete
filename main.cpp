@@ -234,7 +234,7 @@
 //#include <iostream>
 //#include "include/Del3.h" // Inkludera header-filen för Part 3
 
-#define Part_2
+#define PART_2
 
 #include "include/Del2.h"
 
