@@ -16,7 +16,7 @@ int main() {
     addBankAccounts(bank, AMOUNT_OF_ACCOUNTS);
 
     auto endTime = std::chrono::high_resolution_clock::now();
-    std::cout << "Time for generating random accounts completed. It took " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms" << std::endl;
+    std::cout << "Time for generating random accounts completed. It took " << std::chrono::duration_cast<std::chrono::nanoseconds>(endTime - startTime).count() << "ns" << std::endl;
 
     std::cout << "Five first accounts unsorted:" << std::endl;
     
@@ -30,7 +30,7 @@ int main() {
     bank.sortAllAccounts();
 
     endTime = std::chrono::high_resolution_clock::now();
-    std::cout << "Sorting took: " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << " ms\n";
+    std::cout << "Sorting took: " << std::chrono::duration_cast<std::chrono::nanoseconds>(endTime - startTime).count() << " ns\n";
 
     std::cout << "Five first accounts sorted:" << std::endl;
 
