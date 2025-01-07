@@ -1,3 +1,4 @@
+#include "Del2.h"
 #include <iostream>
 
 // En klass för en kö som kan hålla upp till en viss mängd data
@@ -44,7 +45,9 @@ public:
 };
 
 // Här börjar programmet
-int main() {
+    void runPart2(){
+   
+
     // Skapa en kö för heltal (int) som kan lagra upp till 5 element
     Queue<int, 5> q;
 
@@ -67,5 +70,6 @@ int main() {
         std::cout << "Queue is empty!" << std::endl;
     }
 
-    return 0;
+    
 }
+
