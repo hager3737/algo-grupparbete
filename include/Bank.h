@@ -11,7 +11,7 @@ public:
     Bank(IAccountStorage* storage);
     bool addAccount(std::string accountNumber);
     BankAccount* getAccount(std::string accountNumber);
-    void displayAllAccounts();
+    bool getAccountBinaryAlgorithm(std::string accountNumber);
     void sortAllAccounts();
     void displayFiveFirstAccounts();
     void shuffleAllAccounts();

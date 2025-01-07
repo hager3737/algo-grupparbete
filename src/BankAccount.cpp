@@ -10,7 +10,7 @@ BankAccount::BankAccount(std::string accountNumber, float balance)
     this->accountNumber = accountNumber;
     }
 
-std::string BankAccount::getAccountNumber() {
+std::string BankAccount::getAccountNumber() const {
     return accountNumber;
 }
 

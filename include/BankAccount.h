@@ -13,7 +13,7 @@ class BankAccount {
 public:
     BankAccount();
     BankAccount(std::string accountNumber, float balance = 0);
-    std::string getAccountNumber();
+    std::string getAccountNumber() const;
 };
 
 #endif // BANK_ACCOUNT_H

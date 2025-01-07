@@ -12,6 +12,9 @@ bool Bank::addAccount(std::string accountNumber) {
 BankAccount* Bank::getAccount(std::string accountNumber) {
     return accountStorage->findAccount(accountNumber);
 }
+bool Bank::getAccountBinaryAlgorithm(std::string accountNumber) {
+    return accountStorage->findAccountBinaryAlgorithm(accountNumber);
+}
 
 void Bank::sortAllAccounts() {
     std::vector<BankAccount> accounts = accountStorage->sortAccounts();
@@ -19,13 +22,6 @@ void Bank::sortAllAccounts() {
 
 void Bank::shuffleAllAccounts() {
     std::vector<BankAccount> accounts = accountStorage->shuffleAccounts();
-}
-
-void Bank::displayAllAccounts() {
-    std::vector<BankAccount> accounts = accountStorage->getAllAccounts();
-    for (BankAccount& account : accounts) {
-        std::cout << "Account Number: " << account.getAccountNumber() << std::endl;
-    }
 }
 
 void Bank::displayFiveFirstAccounts() {

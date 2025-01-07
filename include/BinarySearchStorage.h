@@ -12,7 +12,7 @@ class BinarySearchStorage : public IAccountStorage {
 public:
 void addAccount(BankAccount account) override;
 BankAccount* findAccount(std::string accountNumber) override;
-std::vector<BankAccount> getAllAccounts() override; // Implemented method
+bool findAccountBinaryAlgorithm(std::string accountNumber) override;
 std::vector<BankAccount> getFiveFirstAccounts() override;
 std::vector<BankAccount> sortAccounts() override;
 std::vector<BankAccount> shuffleAccounts() override;

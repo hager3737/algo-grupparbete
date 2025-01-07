@@ -36,4 +36,30 @@ int main() {
 
     bank.displayFiveFirstAccounts();
 
+    std::cout << "Time for finding one account starting" << std::endl;
+    startTime = std::chrono::high_resolution_clock::now();
+
+    BankAccount *p = bank.getAccount("00001337");
+    if(p != nullptr) {
+        std::cout << "Account found." << std::endl;
+    }
+    else {
+        std::cout << "Account not found." << std::endl;
+    }
+
+    endTime = std::chrono::high_resolution_clock::now();
+    std::cout << "Finding account took: " << std::chrono::duration_cast<std::chrono::nanoseconds>(endTime - startTime).count() << " ns\n";
+
+    std::cout << "Time for finding one account with binary algorithm starting" << std::endl;
+    startTime = std::chrono::high_resolution_clock::now();
+
+    if(bank.getAccountBinaryAlgorithm("00001337")) {
+        std::cout << "Account found." << std::endl;
+    }
+    else {
+        std::cout << "Account not found." << std::endl;
+    }
+    endTime = std::chrono::high_resolution_clock::now();
+    std::cout << "Finding account took: " << std::chrono::duration_cast<std::chrono::nanoseconds>(endTime - startTime).count() << " ns\n";
+
 }
