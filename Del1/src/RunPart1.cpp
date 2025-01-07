@@ -1,9 +1,9 @@
-#include "include/Bank.h"
-#include "include/UtilityFunctions.h"
-#include "include/BinarySearchStorage.h"
+#include "../include/Bank.h"
+#include "../include/UtilityFunctions.h"
+#include "../include/BinarySearchStorage.h"
 #include <iostream>
 #include <chrono>
-#include "include/Constants.h"
+#include "../include/Constants.h"
 #include "../include/RunPart1.h"
 
 void runPart1() {
