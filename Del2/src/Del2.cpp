@@ -49,10 +49,10 @@ public:
     void runPart2(){
    
 
-    // Skapa en kö för heltal (int) som kan lagra upp till 5 element
+    // Skapar en kö som kan hålla upp till 5 element.
     Queue<int, 5> q;
 
-    // Försök att lägga till 6 element i kön
+    // Försöker att lägga till 6 element i kön för att se vad som händer när den blir full.
     for (int i = 1; i <= 6; ++i) {
         // Om vi kan lägga till, skriv ut vilket värde som lades till
         // Annars skriv att kön är full
@@ -61,12 +61,12 @@ public:
 
     int value; // Variabel för att spara värdet som tas bort
 
-    // Ta bort alla element från kön och skriv ut vad som tas bort
+    // Tar bort alla element från kön och skriver ut vad som tas bort
     while (q.dequeue(value)) {
         std::cout << "Dequeued: " << value << std::endl;
     }
 
-    // Försök att ta bort från en tom kö
+    // Försöker att ta bort från en tom kö, vilket get ett meddelande att kön är tom.
     if (!q.dequeue(value)) {
         std::cout << "Queue is empty!" << std::endl;
     }
