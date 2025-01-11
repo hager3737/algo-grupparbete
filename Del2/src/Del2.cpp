@@ -9,7 +9,7 @@ private:
     T data[Size];       // Här sparas alla element i kön
     size_t front = 0;   // var nästa element ska tas bort
     size_t rear = 0;    // var nästa element ska läggas till
-    size_t count = 0;   // Håller koll på hur många element som finns i kön
+    size_t count = 0;   // Håller koll på hur många element som finns i kön just nu
 
 public:
     // Lägger till ett element i kön
