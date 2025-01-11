@@ -1,7 +1,7 @@
 #include "../include/Del2.h"
 #include <iostream>
 #include <string>
-
+//TEST
 // En klass för en kö som kan hålla upp till en viss mängd data
 template <typename T, size_t Size>
 class Queue {
